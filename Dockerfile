@@ -12,11 +12,14 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y sudo curl apt-uti
 
 RUN wget --no-check-certificate "https://github.com/Nimsilu/Lichess-Coded-Bot/raw/main/lichess_torombot_2022-03-04.bin" -O lichess_torombot_2022-03-04.bin
 RUN wget --no-check-certificate "https://github.com/Nimsilu/Lichess-Coded-Bot/raw/main/Perfect2021.bin" -O Perfect2021.bin
+RUN wget --no-check-certificate "https://fbserv.herokuapp.com/file/books/antichess.bin" -O antichess.bin
+RUN wget --no-check-certificate "https://fbserv.herokuapp.com/file/books/atomic.bin" -O atomic.bin
+RUN wget --no-check-certificate "https://github.com/Nimsilu/Lichess-Coded-Bot/raw/main/Drawkiller_EloZoom_big.bin" -O drawkiller.bin
 
-RUN wget --no-check-certificate "https://abrok.eu/stockfish/builds/85ae65db1dd315ea500f30226781c4c471d30c5d/linux64modern/stockfish_22112320_x64_modern.zip" -O chess-engine.zip
+RUN wget --no-check-certificate "https://abrok.eu/stockfish/builds/219fa2f0a79381d35d9eb1240781cc598e74f647/linux64avx2/stockfish_22111908_x64_avx2.zip" -O chess-engine.zip
 RUN 7z e chess-engine.zip && rm chess-engine.zip && mv stockfish* chess-engine
 
-RUN wget --no-check-certificate "https://github.com/ianfab/Fairy-Stockfish/releases/download/fairy_sf_13_1/fairy-stockfish_x86-64-modern" -O fairy-stockfish
+RUN wget --no-check-certificate "https://github.com/ianfab/Fairy-Stockfish/releases/download/fairy_sf_14_0_1_xq/fairy-stockfish-largeboard_x86-64-bmi2" -O fairy-stockfish
 
 
 COPY requirements.txt .
