@@ -1,4 +1,4 @@
-FROM ubuntu:impish
+FROM ubuntu:Jammy
 ENV DEBIAN_FRONTEND noninteractive
 MAINTAINER activer
 RUN echo activer
