@@ -17,10 +17,11 @@ Run 7z e Cerebellum3Merge.bin.7z && rm Cerebellum3Merge.bin.7z
 RUN wget --no-check-certificate "https://abrok.eu/stockfish/builds/f3a2296e591d09dd50323fc3f96e800f5538d8bb/linux64bmi2/stockfish_22031308_x64_bmi2.zip" -O chess-engine.zip
 RUN 7z e chess-engine.zip && rm chess-engine.zip && mv stockfish* chess-engine
 
+RUN wget --no-check-certificate "https://github.com/ianfab/Fairy-Stockfish/releases/download/fairy_sf_13_1/fairy-stockfish-largeboard_x86-64-modern" -O fairy-stockfish-largeboard_x86-64-modern
+
 
 COPY requirements.txt .
 RUN python3 -m pip install --no-cache-dir -r requirements.txt
 
 RUN chmod +x chess-engine
-RUN chmod +x engines/stockfish
-RUN chmod +x engines/multivariant_stockfish
+
