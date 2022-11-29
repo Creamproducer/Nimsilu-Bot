@@ -8,8 +8,8 @@ engine:                                   # Engine settings.
   opening_books:
     enabled: false                        # Activate opening books.
     books:
-#     white:                              # List of names of books to use as white.
-#       - "WhiteBook"
+#      white:                              # List of names of books to use as white.
+#        - "WhiteBook"
 #     black:                              # List of names of books to use as black.
 #       - "BlackBook"
       standard:                           # List of names of books to use if there is no specific book for white, black or chess960.
@@ -19,17 +19,17 @@ engine:                                   # Engine settings.
     selection: "best_move"          # Move selection is one of "weighted_random", "uniform_random" or "best_move".
   online_moves:
     chessdb:
-      enabled: false                      # Activate online moves from https://chessdb.cn/queryc_en/
+      enabled: true                      # Activate online moves from https://chessdb.cn/queryc_en/
       min_depth: 10                       # Minimum evaluation depth.
       min_time: 40                        # Time the bot must have at least to use the online move.
       timeout: 5                          # Time the server has to respond.
     lichess_cloud:
-      enabled: false                      # Activate online moves from Lichess cloud eval.
+      enabled: true                      # Activate online moves from Lichess cloud eval.
       min_depth: 10                       # Minimum evaluation depth.
       min_time: 40                        # Time the bot must have at least to use the online move.
       timeout: 5                          # Time the server has to respond.
     online_egtb:
-      enabled: false                      # Activate online endgame tablebases from Lichess.
+      enabled: true                      # Activate online endgame tablebases from Lichess.
       min_time: 10                        # Time the bot must have at least to use the online move.
       timeout: 3                          # Time the server has to respond.
   offer_draw:
@@ -42,12 +42,15 @@ engine:                                   # Engine settings.
     score: -1000                          # If the score is less than or equal to this value, the bot resigns (in cp).
     consecutive_moves: 5                  # How many moves in a row the score has to be below the resign value.
   uci_options:                            # Arbitrary UCI options passed to the engine. (Commenting allowed)
-    Move Overhead: 100                    # Increase if your bot flags games too often.
-    Threads: 4                            # Max CPU threads the engine can use.
-    Hash: 256                             # Max memory (in megabytes) the engine can allocate.
+    Move Overhead: 300                    # Increase if your bot flags games too often.
+    Threads: 3                            # Max CPU threads the engine can use.
+    Hash: 128                             # Max memory (in megabytes) the engine can allocate.
+    Skill Level: 20
+    UCI_Elo: 2850
+    MultiPV: 6
 #   SyzygyPath: "/path/to/syzygy"         # Path to your local syzygy endgame tablebases
 
-move_overhead_multiplier: 1.0             # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
+move_overhead_multiplier: 3.2             # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
     
 challenge:                                # Incoming challenges. (Commenting allowed)
   concurrency: 1                          # Number of games to play simultaneously.
