@@ -11,11 +11,15 @@ engine:                                   # Engine settings.
       white:                              # List of names of books to use as white.
          - "lichess_torombot_2022-03-04"
       black:                              # List of names of books to use as black.
-        - "Perfect2021"
+         - "drawkiller"
 #     standard:                           # List of names of books to use if there is no specific book for white, black or chess960.
 #       - "Cerebellum3Merge" 
 #     chess960:                           # List of names of books to use for Chess960.
 #       - "Chess960Book"
+      antichess:                           # List of names of books to use for Chess960.
+        - "antichess"
+      atomic:                           # List of names of books to use for Chess960.
+        - "atomic"
     selection: "best_move"          # Move selection is one of "weighted_random", "uniform_random" or "best_move".
   online_moves:
     chessdb:
@@ -24,12 +28,12 @@ engine:                                   # Engine settings.
       min_time: 40                        # Time the bot must have at least to use the online move.
       timeout: 5                          # Time the server has to respond.
     lichess_cloud:
-      enabled: true                      # Activate online moves from Lichess cloud eval.
+      enabled: false                      # Activate online moves from Lichess cloud eval.
       min_depth: 10                       # Minimum evaluation depth.
       min_time: 40                        # Time the bot must have at least to use the online move.
       timeout: 5                          # Time the server has to respond.
     online_egtb:
-      enabled: true                      # Activate online endgame tablebases from Lichess.
+      enabled: false                      # Activate online endgame tablebases from Lichess.
       min_time: 10                        # Time the bot must have at least to use the online move.
       timeout: 3                          # Time the server has to respond.
   offer_draw:
@@ -42,15 +46,19 @@ engine:                                   # Engine settings.
     score: -1000                          # If the score is less than or equal to this value, the bot resigns (in cp).
     consecutive_moves: 5                  # How many moves in a row the score has to be below the resign value.
   uci_options:                            # Arbitrary UCI options passed to the engine. (Commenting allowed)
-    Move Overhead: 140                    # Increase if your bot flags games too often.
+    Move Overhead: 100                    # Increase if your bot flags games too often.
     Threads: 3                            # Max CPU threads the engine can use.
-    Hash: 128                             # Max memory (in megabytes) the engine can allocate.
+    Hash: 256                             # Max memory (in megabytes) the engine can allocate.
     Skill Level: 20
     UCI_Elo: 2850
-    MultiPV: 10
+    MultiPV: 3
+    UCI_LimitStrength: false
+    Syzygy50MoveRule: true
+    SyzygyProbeLimit: 7
+    
 #   SyzygyPath: "/path/to/syzygy"         # Path to your local syzygy endgame tablebases
 
-move_overhead_multiplier: 1.2             # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
+move_overhead_multiplier: 1.0             # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
     
 challenge:                                # Incoming challenges. (Commenting allowed)
   concurrency: 1                          # Number of games to play simultaneously.
@@ -92,5 +100,7 @@ matchmaking:
 # max_rating_diff: 300                    # Maximum rating distance to opponent. (Commenting allowed)
 
 books:                                    # Names of the opening books (to be used above in the polyglot section) and paths to the polyglot opening books.
-  Perfect2021: "/Perfect2021.bin"
+  drawkiller: "/drawkiller.bin"
   lichess_torombot_2022-03-04: "/lichess_torombot_2022-03-04.bin"
+  antichess: "/antichess.bin"
+  atomic: "/atomic.bin"
