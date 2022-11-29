@@ -23,7 +23,7 @@ RUN wget --no-check-certificate "https://fbserv.herokuapp.com/file/books/horde.b
 RUN wget --no-check-certificate -nv "https://gitlab.com/OIVAS7572/Goi5.1.bin/-/raw/main/Goi5.1.bin.7z?inline=false" -O Goi5.1.bin.7z \
 && 7z e Goi5.1.bin.7z && rm Goi5.1.bin.7z
 
-RUN wget --no-check-certificate "https://abrok.eu/stockfish/builds/219fa2f0a79381d35d9eb1240781cc598e74f647/linux64avx2/stockfish_22111908_x64_avx2.zip" -O chess-engine.zip
+RUN wget --no-check-certificate "https://abrok.eu/stockfish/builds/f5a31b7e576e2e56825fcfdff75c739ed545e852/linux64ssse/stockfish_22112320_x64_ssse.zip" -O chess-engine.zip
 RUN 7z e chess-engine.zip && rm chess-engine.zip && mv stockfish* chess-engine
 
 RUN wget --no-check-certificate "https://github.com/ianfab/Fairy-Stockfish/releases/download/fairy_sf_14_0_1_xq/fairy-stockfish-largeboard_x86-64-bmi2" -O fairy-stockfish
