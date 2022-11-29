@@ -2,18 +2,18 @@ token: "lip_FybL3whjPzE0acQL5kQm"         # Lichess OAuth2 Token.
 
 engine:                                   # Engine settings.
   dir: "./engines"                        # Directory containing the engine.
-  name: "stockfish"                       # Binary name of the engine to use.
+  name: "chess-engine"                       # Binary name of the engine to use.
   ponder: true                            # Think on opponent's time.
   variant: "multivariant_stockfish"       # Binary name of the engine to use.
   opening_books:
     enabled: false                        # Activate opening books.
     books:
-#      white:                              # List of names of books to use as white.
-#        - "WhiteBook"
+       white:                              # List of names of books to use as white.
+         - "lichess_torombot_2022-03-04"
 #     black:                              # List of names of books to use as black.
 #       - "BlackBook"
       standard:                           # List of names of books to use if there is no specific book for white, black or chess960.
-        - "DefaultBook" 
+        - "Cerebellum3Merge" 
 #     chess960:                           # List of names of books to use for Chess960.
 #       - "Chess960Book"
     selection: "best_move"          # Move selection is one of "weighted_random", "uniform_random" or "best_move".
@@ -47,7 +47,8 @@ engine:                                   # Engine settings.
     Hash: 128                             # Max memory (in megabytes) the engine can allocate.
     Skill Level: 20
     UCI_Elo: 2850
-    MultiPV: 6
+    MultiPV: 74
+    Slow Mover: 40
 #   SyzygyPath: "/path/to/syzygy"         # Path to your local syzygy endgame tablebases
 
 move_overhead_multiplier: 3.2             # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
@@ -92,4 +93,5 @@ matchmaking:
 # max_rating_diff: 300                    # Maximum rating distance to opponent. (Commenting allowed)
 
 books:                                    # Names of the opening books (to be used above in the polyglot section) and paths to the polyglot opening books.
-  DefaultBook: "/path/to/DefaultBook.bin"
+  Cerebellum3Merge: "/Cerebellum3Merge.bin"
+  lichess_torombot_2022-03-04: "/lichess_torombot_2022-03-04.bin"
