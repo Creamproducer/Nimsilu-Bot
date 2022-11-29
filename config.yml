@@ -4,14 +4,14 @@ engine:                                   # Engine settings.
   dir: "./"                        # Directory containing the engine.
   name: "chess-engine"                       # Binary name of the engine to use.
   ponder: true                            # Think on opponent's time.
-  variant: "fairy-stockfish-largeboard_x86-64-modern"       # Binary name of the engine to use.
+  variant: "fairy-stockfish"            # Binary name of the engine to use.
   opening_books:
     enabled: true                        # Activate opening books.
     books:
       white:                              # List of names of books to use as white.
          - "lichess_torombot_2022-03-04"
       black:                              # List of names of books to use as black.
-        - "Cerebellum3Merge"
+        - "Perfect2021"
 #     standard:                           # List of names of books to use if there is no specific book for white, black or chess960.
 #       - "Cerebellum3Merge" 
 #     chess960:                           # List of names of books to use for Chess960.
@@ -19,7 +19,7 @@ engine:                                   # Engine settings.
     selection: "best_move"          # Move selection is one of "weighted_random", "uniform_random" or "best_move".
   online_moves:
     chessdb:
-      enabled: true                      # Activate online moves from https://chessdb.cn/queryc_en/
+      enabled: false                      # Activate online moves from https://chessdb.cn/queryc_en/
       min_depth: 10                       # Minimum evaluation depth.
       min_time: 40                        # Time the bot must have at least to use the online move.
       timeout: 5                          # Time the server has to respond.
@@ -92,5 +92,5 @@ matchmaking:
 # max_rating_diff: 300                    # Maximum rating distance to opponent. (Commenting allowed)
 
 books:                                    # Names of the opening books (to be used above in the polyglot section) and paths to the polyglot opening books.
-  Cerebellum3Merge: "/Cerebellum3Merge.bin"
+  Perfect2021: "/Perfect2021.bin"
   lichess_torombot_2022-03-04: "/lichess_torombot_2022-03-04.bin"
