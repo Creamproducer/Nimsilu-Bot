@@ -1,8 +1,8 @@
-FROM ubuntu:Jammy
+FROM ubuntu:jammy
 ENV DEBIAN_FRONTEND noninteractive
-MAINTAINER activer
-RUN echo activer
-CMD echo activer
+MAINTAINER heroku
+RUN echo heroku
+CMD echo heroku
 COPY . .
 
 
