@@ -8,12 +8,12 @@ engine:                                   # Engine settings.
   opening_books:
     enabled: false                        # Activate opening books.
     books:
-       white:                              # List of names of books to use as white.
+      white:                              # List of names of books to use as white.
          - "lichess_torombot_2022-03-04"
-#     black:                              # List of names of books to use as black.
-#       - "BlackBook"
-      standard:                           # List of names of books to use if there is no specific book for white, black or chess960.
-        - "Cerebellum3Merge" 
+      black:                              # List of names of books to use as black.
+        - "Cerebellum3Merge"
+#     standard:                           # List of names of books to use if there is no specific book for white, black or chess960.
+#       - "Cerebellum3Merge" 
 #     chess960:                           # List of names of books to use for Chess960.
 #       - "Chess960Book"
     selection: "best_move"          # Move selection is one of "weighted_random", "uniform_random" or "best_move".
@@ -51,7 +51,7 @@ engine:                                   # Engine settings.
     Slow Mover: 40
 #   SyzygyPath: "/path/to/syzygy"         # Path to your local syzygy endgame tablebases
 
-move_overhead_multiplier: 3.2             # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
+move_overhead_multiplier: 2.0             # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
     
 challenge:                                # Incoming challenges. (Commenting allowed)
   concurrency: 1                          # Number of games to play simultaneously.
