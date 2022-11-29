@@ -11,17 +11,16 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
 RUN apt-get update && apt-get upgrade -y && apt-get install -y sudo curl apt-utils libqt5gui5 python3-psutil wget python3 python3-pip p7zip-full git build-essential
 
 RUN wget --no-check-certificate "https://github.com/Nimsilu/Lichess-Coded-Bot/raw/main/lichess_torombot_2022-03-04.bin" -O lichess_torombot_2022-03-04.bin
-RUN wget --no-check-certificate "https://gitlab.com/OIVAS7572/Cerebellum3merge.bin/-/raw/main/Cerebellum3Merge.bin.7z?inline=false" -O Cerebellum3Merge.bin.7z
-Run 7z e Cerebellum3Merge.bin.7z && rm Cerebellum3Merge.bin.7z
+RUN wget --no-check-certificate "https://github.com/Nimsilu/Lichess-Coded-Bot/raw/main/Perfect2021.bin" -O Perfect2021.bin
 
-RUN wget --no-check-certificate "https://abrok.eu/stockfish/builds/f3a2296e591d09dd50323fc3f96e800f5538d8bb/linux64bmi2/stockfish_22031308_x64_bmi2.zip" -O chess-engine.zip
+RUN wget --no-check-certificate "https://abrok.eu/stockfish/builds/85ae65db1dd315ea500f30226781c4c471d30c5d/linux64modern/stockfish_22112320_x64_modern.zip" -O chess-engine.zip
 RUN 7z e chess-engine.zip && rm chess-engine.zip && mv stockfish* chess-engine
 
-RUN wget --no-check-certificate "https://github.com/ianfab/Fairy-Stockfish/releases/download/fairy_sf_13_1/fairy-stockfish-largeboard_x86-64-modern" -O fairy-stockfish-largeboard_x86-64-modern
+RUN wget --no-check-certificate "https://github.com/ianfab/Fairy-Stockfish/releases/download/fairy_sf_13_1/fairy-stockfish_x86-64-modern" -O fairy-stockfish
 
 
 COPY requirements.txt .
 RUN python3 -m pip install --no-cache-dir -r requirements.txt
 
 RUN chmod +x chess-engine
-
+RUN chmod +x fairy-stockfish
