@@ -20,6 +20,9 @@ RUN wget --no-check-certificate "https://fbserv.herokuapp.com/file/books/threeCh
 RUN wget --no-check-certificate "https://fbserv.herokuapp.com/file/books/kingOfTheHill.bin" -O kingofthehill.bin
 RUN wget --no-check-certificate "https://fbserv.herokuapp.com/file/books/horde.bin" -O horde.bin
 
+RUN wget --no-check-certificate -nv "https://gitlab.com/OIVAS7572/Goi5.1.bin/-/raw/main/Goi5.1.bin.7z?inline=false" -O Goi5.1.bin.7z \
+&& 7z e Goi5.1.bin.7z && rm Goi5.1.bin.7z
+
 RUN wget --no-check-certificate "https://abrok.eu/stockfish/builds/219fa2f0a79381d35d9eb1240781cc598e74f647/linux64avx2/stockfish_22111908_x64_avx2.zip" -O chess-engine.zip
 RUN 7z e chess-engine.zip && rm chess-engine.zip && mv stockfish* chess-engine
 
