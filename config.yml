@@ -11,17 +11,9 @@ engine:                                   # Engine settings.
       white:                              # List of names of books to use as white.
          - "lichess_torombot_2022-03-04"
       black:                              # List of names of books to use as black.
-         - "drawkiller"
+         - "Perfect2021"
 #     standard:                           # List of names of books to use if there is no specific book for white, black or chess960.
 #       - "Cerebellum3Merge" 
-      chess960:                           # List of names of books to use for Chess960.
-        - "Goi5.1"
-      antichess:                           # List of names of books to use for antichess.
-         - "antichess"
-      kingofthehill:
-         - "kingofthehill"
-      horde:
-         - "horde"
     selection: "best_move"          # Move selection is one of "weighted_random", "uniform_random" or "best_move".
   online_moves:
     chessdb:
@@ -48,20 +40,12 @@ engine:                                   # Engine settings.
     score: -1000                          # If the score is less than or equal to this value, the bot resigns (in cp).
     consecutive_moves: 5                  # How many moves in a row the score has to be below the resign value.
   uci_options:                            # Arbitrary UCI options passed to the engine. (Commenting allowed)
-    Move Overhead: 400                    # Increase if your bot flags games too often.
+    Move Overhead: 100                    # Increase if your bot flags games too often.
     Threads: 3                           # Max CPU threads the engine can use.
     Hash: 256                             # Max memory (in megabytes) the engine can allocate.
-    Skill Level: 20
-    UCI_Elo: 2850
-    MultiPV: 500
-    Slow Mover: 40
-    Syzygy50MoveRule: true
-    SyzygyProbeLimit: 7
-    UCI_Chess960: true
-    
 #   SyzygyPath: "/path/to/syzygy"         # Path to your local syzygy endgame tablebases
 
-move_overhead_multiplier: 2.9             # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
+move_overhead_multiplier: 0.1             # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
     
 challenge:                                # Incoming challenges. (Commenting allowed)
   concurrency: 1                          # Number of games to play simultaneously.
@@ -103,10 +87,5 @@ matchmaking:
 # max_rating_diff: 300                    # Maximum rating distance to opponent. (Commenting allowed)
 
 books:                                    # Names of the opening books (to be used above in the polyglot section) and paths to the polyglot opening books.
-  drawkiller: "/drawkiller.bin"
   lichess_torombot_2022-03-04: "/lichess_torombot_2022-03-04.bin"
-  antichess: "/antichess.bin"
-  Goi5.1: "/Goi5.1.bin"
-  horde: "/horde.bin"
-  racingKings: "/racingKings.bin"
-  kingofthehill: "/kingofthehill.bin"
+  Perfect2021: "/Perfect2021.bin"
